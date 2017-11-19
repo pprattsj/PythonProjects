@@ -1,0 +1,20 @@
+import bs4
+from urllib.request import urlopen as uReg
+from bs4 import BeautifulSoup as soup
+myurl ='https://en.wikipedia.org/wiki/Special:Random'
+
+def wikiRandom():
+ uClient = uReg(myurl)
+ page_html = uClient.read()
+ page_soup = soup(page_html,"html.parser")
+ page_soup.body.span
+ desc = page_soup.p.text
+ return desc.split('.')[0]
+
+def wikiThoughts(y):
+ x=0
+ while x<y:
+  wiki = wikiRandom()
+  print(wiki+'\n')
+  x=x+1
+ 

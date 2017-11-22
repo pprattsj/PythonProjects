@@ -9,16 +9,18 @@ def wikiRandom():
  page_soup = soup(page_html,"html.parser")
  page_soup.body.span
  desc = page_soup.p.text
- return desc.split('.')[0]
+ title = page_soup.h1.text
+ return title, desc.split('.')[0]
 
 def wikiThoughts(y):
  import textwrap as tw
  x=0
  while x<y:
   wiki = wikiRandom()
-  desc = tw.wrap(wiki)
-  for z in range(0,len(desc)):
-   print(desc[z])
+  print(wiki[0])
+  desc = tw.wrap(wiki[1])
+  for z in desc:
+   print(z)
   print('\n')
   x=x+1
  

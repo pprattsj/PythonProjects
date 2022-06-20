@@ -30,7 +30,7 @@ class House:
     for k in range(0,self.roomcount[2]): 
      print('Floor',k)
      for j in range(0,self.roomcount[0]):
-      print(j,j+((self.roomcount[1]-1)*k), self.rooms[j+((self.roomcount[1]-1)*k)] )
+      print(j,j+((self.roomcount[1])*k), self.rooms[j+((self.roomcount[1])*k)] )
     print('\n OR\n\n')
 
     for k,r in enumerate(self.rooms):
